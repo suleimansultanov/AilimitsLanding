@@ -1,0 +1,103 @@
+{
+  "theme_and_archetype": {
+    "theme": "DARK",
+    "archetype": "4 (Swiss & High-Contrast)",
+    "description": "Engineered, precise, and authoritative. Reflects 'agents that prove their work'. Avoids all flashy/cosmic AI tropes. Focuses on structural borders, mono-spaced data, and terminal-like audit logs."
+  },
+  "color_palette": {
+    "background": {
+      "base": "#09090B",
+      "surface": "#18181B",
+      "surface_hover": "#27272A"
+    },
+    "accents": {
+      "primary": "#7C3AED",
+      "primary_hover": "#6D28D9",
+      "verification_success": "#10B981",
+      "escalation_warning": "#F59E0B"
+    },
+    "text": {
+      "primary": "#FAFAFA",
+      "secondary": "#A1A1AA",
+      "mono_accent": "#A78BFA"
+    },
+    "borders": {
+      "default": "rgba(255,255,255,0.1)",
+      "focus": "#7C3AED",
+      "grid": "rgba(255,255,255,0.05)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "Chivo",
+      "body": "IBM Plex Sans",
+      "mono": "IBM Plex Mono",
+      "import_instructions": "Import these fonts from Google Fonts via @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap'); in index.css"
+    },
+    "hierarchy": {
+      "h1": "text-5xl lg:text-6xl tracking-tighter font-bold",
+      "h2": "text-3xl lg:text-4xl tracking-tight font-semibold",
+      "h3": "text-xl font-medium tracking-tight",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-zinc-500",
+      "audit_log": "text-sm font-mono tracking-tight text-zinc-300"
+    },
+    "rules": [
+      "Never use Inter for headings",
+      "Never center-align hero or large text blocks. Asymmetry and left-alignment create tension and precision.",
+      "Use IBM Plex Mono for all audit logs, timestamps, stack badges, and data points."
+    ]
+  },
+  "layout_and_spacing": {
+    "grid_system": "The 'Control Room' Grid. Use strict grid-cols-1 md:grid-cols-3 lg:grid-cols-4. Apply border-collapse or 1px border on all grid items.",
+    "spacing_scale": "Use generous padding for containers (p-8 to p-12) but dense data grouping inside (gap-2, gap-4).",
+    "alignment": "Left-align dense content and forms. Use asymmetric grid spans (e.g., col-span-8 and col-span-4).",
+    "borders": "No border-radius. Use rounded-none for a sharp, technical, B2B engineering feel."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-violet-600 hover:bg-violet-500 text-white font-medium px-6 py-3 rounded-none transition-colors duration-200",
+      "secondary": "bg-transparent hover:bg-zinc-900 text-white font-medium px-6 py-3 rounded-none border border-zinc-700 transition-colors duration-200"
+    },
+    "cards": {
+      "base": "bg-zinc-950/50 border border-white/10 rounded-none p-6 backdrop-blur-sm",
+      "hover": "hover:border-violet-500/50 hover:bg-zinc-900 transition-all duration-300"
+    },
+    "navigation": {
+      "style": "Glassmorphism with optical clarity: backdrop-blur-xl bg-zinc-950/70 border-b border-white/10. Include RU/EN toggle.",
+      "behavior": "Sticky top nav, z-50."
+    },
+    "audit_log_motif": {
+      "description": "Visual element replacing standard images. A simulated terminal streaming verification actions: '[VERIFIED] Invoice #3292 matched with PO' using IBM Plex Mono and subtle emerald green highlights. Use framer-motion to animate new lines appearing."
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": "Left-aligned heavy typography. Subhead in mono font. Right side features the animated 'audit log' terminal motif instead of an image.",
+      "problem": "Stark contrast. Darker background section. Large bold text emphasizing the hallucination problem in AI.",
+      "how_it_works": "3 steps (Verify, Escalate, Audit) placed in a 3-column strict grid with visible borders.",
+      "use_cases": "Strip cards horizontally scrolling (use standard CSS scroll snap or react-fast-marquee).",
+      "track_record": "Bento grid (Control Room layout) of proof cards showing pipelines and systems.",
+      "early_access": "Minimalist form. Shadcn Input + Button."
+    },
+    "founder": {
+      "layout": "Terminal/IDE aesthetic. Bio text left-aligned. Strict list format for projects. Use react-icons (SiPython, SiAmazonaws, SiGooglecloud, SiNextdotjs, SiDocker, SiN8N, SiTensorflow, SiPytorch) for stack badges."
+    },
+    "admin": {
+      "layout": "Centered strict login box on a near-black screen. Upon login, a data-dense table view for waitlist emails using Shadcn Table component."
+    }
+  },
+  "media_and_icons": {
+    "icons_library": "lucide-react for UI icons (Chevron, Check, AlertCircle). react-icons/si for tech stack logos.",
+    "images": "NO STOCK PHOTOS. Rely entirely on typography, 1px structural borders, and the code/audit-log visual motif."
+  },
+  "testing": {
+    "rules": "All interactive elements MUST include data-testid attribute (e.g., data-testid='hero-cta-button', data-testid='early-access-submit')."
+  },
+  "instructions_to_main_agent": [
+    "Ensure the design remains strictly B2B and technical. Do not add decorative gradients or blurry glowing orbs (except subtle button hovers).",
+    "Use raw HTML/Tailwind for marketing section layouts to maintain asymmetry, and Shadcn for interactive pieces (Forms, Inputs, Table).",
+    "Strictly follow the color palette. Violet-600 is the main action color.",
+    "Do not use generic border-radius. Use rounded-none for a sharp, precise look."
+  ]
+}
