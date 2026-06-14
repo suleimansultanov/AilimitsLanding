@@ -1,0 +1,43 @@
+{
+  "summary": "Full e2e + API regression for AILIMITS. Backend: 10/10 pytest cases pass covering waitlist (valid/invalid/dedupe/lowercased), auth (login success/fail, /me with/without token), admin/waitlist (401 without token, 200 with). Frontend: all critical flows pass — home loads, EN/RU toggle switches copy, nav anchors smooth-scroll, waitlist signup success + duplicate idempotency, /founder page navigates, /admin redirects to /login when logged out, invalid login shows error, valid admin login lands on dashboard with count/refresh/export visible.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {
+        "flow": "Waitlist invalid email",
+        "issue": "When user enters a clearly non-email value like 'not-an-email', the browser's native HTML5 validation (tooltip) fires before the form's onSubmit, so the inline [data-testid=\"waitlist-error\"] message is never shown for that case. The inline error DOES show for inputs that pass HTML5 but fail the stricter JS regex (e.g. 'a@b'). Behavior is acceptable (user still sees an error), but inconsistent with task spec wording. To always show the custom inline error, add noValidate to the <form> in WaitlistForm.jsx.",
+        "affected_selectors": ["[data-testid=\"waitlist-error\"]", "[data-testid=\"waitlist-form\"]"]
+      }
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_ailimits_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "OPTIONAL UX: Add `noValidate` to the WaitlistForm <form> so the custom inline [BLOCKED] error appears for all invalid inputs (currently the browser-native tooltip pre-empts it for obvious cases like 'not-an-email'). Functionally still works — error path verified with 'a@b'."
+  ],
+  "critical_code_review_comments": [
+    "server.py is a single 245-line file — fine for now, but if more routes/services are added split into routers/services modules.",
+    "WaitlistForm uses inline EMAIL_RE; HTML5 type=email + native validation pre-empts JS error path for clearly invalid inputs. Either drop type=email or add noValidate for consistent UX.",
+    "All API responses correctly omit Mongo `_id` (use str id). Good.",
+    "JWT secret, admin creds, and Mongo URL all loaded from .env — no hardcoded values. Good.",
+    "Brute-force lockout implemented (5 attempts / 15 min per ip+email) and verified.",
+    "seed_admin is idempotent and updates password if it has changed in .env. Good."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_ailimits_api.py (new regression suite)"
+  ],
+  "success_rate": {"backend": "100%", "frontend": "100% (1 minor UX inconsistency, not a functional failure)"},
+  "test_credentials": "admin@ailimits.ai / AiLimits2026! (from /app/memory/test_credentials.md)",
+  "seed_data_creation": "Tests created several TEST_/ui_test_/dup_/UPPER_ waitlist entries in db.waitlist for verification.",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Backend regression at /app/backend/tests/test_ailimits_api.py — run with `pytest /app/backend/tests/test_ailimits_api.py -v`. Brute-force lockout is per ip+email, resets on successful login, so back-to-back invalid login tests are safe up to 4 fails. Admin token stored in localStorage key `ailimits_admin_token`. Language toggle persists in `ailimits_lang`. All flows verified end-to-end on public URL.",
+  "rca of the issue": "Waitlist inline error UX inconsistency RCA: <input type=\"email\"> triggers browser-native HTML5 validation on form submit. For inputs missing '@', the browser blocks submission and shows its own tooltip, so React's onSubmit handler (which sets the custom inline error) never runs. For inputs that satisfy HTML5 (e.g. 'a@b') but fail the JS regex /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/, the custom inline error renders correctly. Mitigation: add `noValidate` attribute on the <form> element, or change type to text — either makes the custom inline error always reachable."
+}
