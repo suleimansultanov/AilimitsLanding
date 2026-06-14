@@ -60,7 +60,7 @@ export const WaitlistForm = () => {
   }
 
   return (
-    <form data-testid="waitlist-form" onSubmit={submit} className="space-y-4">
+    <form data-testid="waitlist-form" onSubmit={submit} noValidate className="space-y-4">
       <div>
         <label className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">{c.emailLabel}</label>
         <input
