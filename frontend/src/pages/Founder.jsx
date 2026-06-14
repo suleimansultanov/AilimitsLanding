@@ -15,6 +15,7 @@ import {
   SiOpenai,
 } from "react-icons/si";
 import { CONTACT_EMAIL } from "../lib/content";
+import { Logo } from "../components/Logo";
 
 const STACK = [
   { name: "Python", Icon: SiPython },
@@ -72,15 +73,8 @@ export default function Founder() {
       {/* Minimal top bar */}
       <header className="border-b border-white/10 bg-zinc-950/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 lg:px-8">
-          <Link to="/" data-testid="founder-logo-home" className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center border border-violet-500/60 bg-violet-600/10">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-violet-400">
-                <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-              </svg>
-            </span>
-            <span className="font-heading text-lg font-bold tracking-tight">
-              AI<span className="text-violet-400">LIMITS</span>
-            </span>
+          <Link to="/" data-testid="founder-logo-home" className="inline-flex">
+            <Logo />
           </Link>
           <Link
             to="/"

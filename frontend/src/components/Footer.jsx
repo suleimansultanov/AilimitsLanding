@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { CONTACT_EMAIL } from "../lib/content";
+import { Logo } from "./Logo";
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -10,16 +11,7 @@ export const Footer = () => {
       <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center border border-violet-500/60 bg-violet-600/10">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-violet-400">
-                  <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-                </svg>
-              </span>
-              <span className="font-heading text-lg font-bold tracking-tight text-white">
-                AI<span className="text-violet-400">LIMITS</span>
-              </span>
-            </div>
+            <Logo />
             <p className="mt-4 text-sm text-zinc-400">{t.footer.tagline}</p>
             <p className="mt-4 font-mono text-xs uppercase tracking-[0.15em] text-zinc-600">
               {t.footer.builtIn}

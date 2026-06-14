@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { LogOut, RefreshCw, Download, Inbox } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { Logo } from "../components/Logo";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
@@ -64,15 +65,8 @@ export default function Admin() {
       <header className="border-b border-white/10 bg-zinc-950/70 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-8">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-7 w-7 items-center justify-center border border-violet-500/60 bg-violet-600/10">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-violet-400">
-                <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-              </svg>
-            </span>
-            <span className="font-heading text-base font-bold tracking-tight">
-              AI<span className="text-violet-400">LIMITS</span>
-              <span className="ml-2 font-mono text-xs font-normal text-zinc-500">/ admin</span>
-            </span>
+            <Logo wordClass="text-base" />
+            <span className="font-mono text-xs font-normal text-zinc-500">/ admin</span>
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden font-mono text-xs text-zinc-500 sm:inline">{user.email}</span>

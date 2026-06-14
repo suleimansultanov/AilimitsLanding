@@ -2,17 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
+import { Logo } from "./Logo";
 
-const Logo = () => (
-  <Link to="/" data-testid="logo-home-link" className="group flex items-center gap-2.5">
-    <span className="flex h-7 w-7 items-center justify-center border border-violet-500/60 bg-violet-600/10">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-violet-400">
-        <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-      </svg>
-    </span>
-    <span className="font-heading text-lg font-bold tracking-tight text-white">
-      AI<span className="text-violet-400">LIMITS</span>
-    </span>
+const BrandLogo = () => (
+  <Link to="/" data-testid="logo-home-link" className="group">
+    <Logo />
   </Link>
 );
 
@@ -72,7 +66,7 @@ export const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <Logo />
+        <BrandLogo />
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((l) => (

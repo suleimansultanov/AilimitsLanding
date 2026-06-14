@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
 import { useAuth, formatApiErrorDetail } from "../context/AuthContext";
+import { Logo } from "../components/Logo";
 
 export default function Login() {
   const { login, user } = useAuth();
@@ -39,15 +40,8 @@ export default function Login() {
         transition={{ duration: 0.5 }}
         className="relative w-full max-w-md border border-white/10 bg-zinc-950/80 p-8 backdrop-blur-sm lg:p-10"
       >
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center border border-violet-500/60 bg-violet-600/10">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-violet-400">
-              <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
-            </svg>
-          </span>
-          <span className="font-heading text-lg font-bold tracking-tight text-white">
-            AI<span className="text-violet-400">LIMITS</span>
-          </span>
+        <Link to="/" className="inline-flex">
+          <Logo />
         </Link>
 
         <div className="mt-8 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
