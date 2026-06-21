@@ -3,7 +3,11 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+// Formspree form ID — get one for free at https://formspree.io
+// (create a form, copy the code from the endpoint https://formspree.io/f/XXXXXXX).
+// Can also be provided at build time via REACT_APP_FORMSPREE_ID.
+const FORMSPREE_ID = process.env.REACT_APP_FORMSPREE_ID || "xkolwvbd";
+const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const WaitlistForm = () => {
@@ -24,13 +28,17 @@ export const WaitlistForm = () => {
     }
     setStatus("loading");
     try {
-      const { data } = await axios.post(`${API}/waitlist`, {
-        email: email.trim(),
-        company: company.trim(),
-        use_case: useCase.trim(),
-      });
+      await axios.post(
+        FORMSPREE_URL,
+        {
+          email: email.trim(),
+          company: company.trim(),
+          use_case: useCase.trim(),
+        },
+        { headers: { Accept: "application/json" } },
+      );
       setStatus("success");
-      setMessage(data.duplicate ? c.already : c.successBody);
+      setMessage(c.successBody);
     } catch {
       setStatus("error");
       setMessage(c.error);
