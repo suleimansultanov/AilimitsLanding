@@ -3,9 +3,10 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
 import { Logo } from "./Logo";
+import { AILIMITS_PATH, CV_HOME } from "../lib/paths";
 
 const BrandLogo = () => (
-  <Link to="/" data-testid="logo-home-link" className="group">
+  <Link to={AILIMITS_PATH} data-testid="logo-home-link" className="group">
     <Logo />
   </Link>
 );
@@ -45,8 +46,8 @@ export const Navbar = () => {
 
   const goToSection = (id) => {
     setOpen(false);
-    if (location.pathname !== "/") {
-      navigate(`/#${id}`);
+    if (location.pathname.replace(/\/$/, "") !== AILIMITS_PATH) {
+      navigate(`${AILIMITS_PATH}#${id}`);
       return;
     }
     const el = document.getElementById(id);
@@ -80,7 +81,7 @@ export const Navbar = () => {
             </button>
           ))}
           <Link
-            to="/founder"
+            to={CV_HOME}
             data-testid="nav-founder"
             className="font-mono text-xs uppercase tracking-[0.15em] text-zinc-400 transition-colors hover:text-white"
           >
@@ -133,7 +134,7 @@ export const Navbar = () => {
               </button>
             ))}
             <Link
-              to="/founder"
+              to={CV_HOME}
               onClick={() => setOpen(false)}
               className="text-left font-mono text-sm uppercase tracking-wider text-zinc-300"
             >

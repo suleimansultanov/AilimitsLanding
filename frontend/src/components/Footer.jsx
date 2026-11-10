@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { CONTACT_EMAIL } from "../lib/content";
 import { Logo } from "./Logo";
+import { CV_HOME } from "../lib/paths";
 
 export const Footer = () => {
   const { t } = useLanguage();
@@ -33,7 +34,7 @@ export const Footer = () => {
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">{t.nav.product}</p>
               <Link
                 data-testid="footer-founder-link"
-                to="/founder"
+                to={CV_HOME}
                 className="mt-3 block text-sm text-zinc-300 transition-colors hover:text-violet-400"
               >
                 {t.footer.founder}

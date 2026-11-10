@@ -11,6 +11,9 @@ module.exports = {
         sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
         heading: ['Chivo', 'system-ui', 'sans-serif'],
         mono: ['IBM Plex Mono', 'monospace'],
+        cvsans: ['Inter', 'system-ui', 'sans-serif'],
+        cvheading: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        cvmono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
         lg: 'var(--radius)',

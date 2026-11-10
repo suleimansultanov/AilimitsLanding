@@ -79,3 +79,21 @@ body {
         border-color: rgba(255, 255, 255, 0.1);
     }
 }
+
+/* CV pages (light theme). CvSite adds .cv-theme to <html> while it is mounted. */
+html.cv-theme,
+html.cv-theme body {
+    background-color: #f8fafc;
+    color: #334155;
+}
+html.cv-theme ::selection {
+    background: rgba(37, 99, 235, 0.18);
+    color: inherit;
+}
+html.cv-theme ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+html.cv-theme ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-color: #f1f5f9;
+}
