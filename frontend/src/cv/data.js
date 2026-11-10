@@ -7,6 +7,7 @@ export const profile = {
   location: "Pegnitz (Nuremberg area), Germany",
   workStatus: "Authorized to work in Germany",
   email: "suleimansultanov@gmail.com",
+  founderEmail: "founder@suleimansultanov.com", // AILIMITS
   phone: "+49 151 41545791",
   phoneHref: "tel:+4915141545791",
   linkedin: "https://www.linkedin.com/in/suleiman-sultanov-292247202",
@@ -101,6 +102,7 @@ export const projectGroups = [
         text: "Verification and audit layer that checks every action of an AI agent before it commits, for finance and back-office automation.",
         tags: ["AI agents", "Verification", "Audit trail"],
         link: { label: "Project page", to: "/projects/ailimits" },
+        contact: "founder@suleimansultanov.com",
         featured: true,
       },
     ],

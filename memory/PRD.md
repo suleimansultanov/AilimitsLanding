@@ -5,6 +5,7 @@ Production-ready marketing website for indie AI startup **AILIMITS** (domain sul
 
 ## Architecture
 - **Frontend**: React 19 (CRA + craco), Tailwind, framer-motion, lucide-react + react-icons/si. Routes: `/` (single-page site), `/founder`, `/login`, `/admin`.
+- **Since 2026-11-10**: suleimansultanov.com root is the founder's CV site (`src/cv/`). The AILIMITS landing lives at `/projects/ailimits` (URL to use for AILIMITS everywhere). `/founder` redirects to the CV; `/login` and `/admin` are not routed on GitHub Pages (no backend deployed).
 - **Backend**: FastAPI + MongoDB (motor). All routes under `/api`.
 - **Auth**: Custom JWT (HS256, 12h), bcrypt hashing, single admin seeded from env, brute-force lockout. Token in localStorage + Bearer header.
 - **i18n**: EN/RU toggle for main page (LanguageContext, persisted to localStorage). Founder page EN-only by decision.

@@ -99,6 +99,10 @@ const Sidebar = () => (
     <div className="px-6 pb-10">
       <ul className="space-y-1">
         <ContactRow icon={Mail} href={`mailto:${profile.email}`}>{profile.email}</ContactRow>
+        <ContactRow icon={Mail} href={`mailto:${profile.founderEmail}`}>
+          {profile.founderEmail}
+          <span className="block text-xs text-slate-400">AILIMITS</span>
+        </ContactRow>
         <ContactRow icon={Phone} href={profile.phoneHref}>{profile.phone}</ContactRow>
         <ContactRow icon={MapPin} href="https://www.google.com/maps/search/?api=1&query=Pegnitz%2C%20Germany" external>
           {profile.location}
@@ -277,6 +281,15 @@ const ProjectCard = ({ p }) => (
         <Tag key={t}>{t}</Tag>
       ))}
     </div>
+    {p.contact && (
+      <a
+        href={`mailto:${p.contact}`}
+        className="mt-4 flex w-fit items-center gap-2 text-sm text-slate-600 hover:text-blue-700"
+      >
+        <Mail className="h-4 w-4 text-blue-600" aria-hidden="true" />
+        {p.contact}
+      </a>
+    )}
     <ProjectLink link={p.link} />
   </div>
 );
