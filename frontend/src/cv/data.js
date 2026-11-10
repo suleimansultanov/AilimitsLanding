@@ -13,7 +13,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/suleiman-sultanov-292247202",
   github: "https://github.com/suleimansultanov",
   cvPdf: "/Suleiman_Sultanov_CV.pdf",
-  photo: "/suleiman.jpg",
+  photo: "/suleiman-sultanov.jpg",
 };
 
 export const summary =
