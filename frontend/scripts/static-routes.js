@@ -10,9 +10,9 @@ const ORIGIN = "https://suleimansultanov.com";
 const template = fs.readFileSync(path.join(BUILD, "index.html"), "utf8");
 
 const CV_DESC =
-  "Suleiman Sultanov: AI Engineer and senior Python backend developer with 8+ years of experience. RAG, AI agents, FastAPI, AWS/GCP. M.Sc. Computer Science (Big Data & AI), SRH Berlin. Based near Nuremberg, Germany.";
+  "Suleiman Sultanov: AI Engineer and senior Python backend developer with 8+ years of experience. RAG, AI agents, MCP, LLM evals, FastAPI, AWS/GCP, Kubernetes. M.Sc. Computer Science (Big Data & AI), SRH Berlin. Based near Nuremberg, Germany.";
 const CV_KEYWORDS =
-  "Suleiman Sultanov, AI Engineer, Python backend developer, LLM, RAG, AI agents, FastAPI, Django, AWS, GCP, Nuremberg, Germany";
+  "Suleiman Sultanov, AI Engineer, Python backend developer, LLM, RAG, AI agents, MCP, LLM evals, FastAPI, Django, AWS, GCP, Kubernetes, Nuremberg, Germany";
 
 const cv = (route, title) => ({
   route,

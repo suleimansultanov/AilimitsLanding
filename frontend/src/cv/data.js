@@ -20,7 +20,7 @@ export const summary =
   "AI Engineer and senior Python backend developer with 8+ years of experience shipping production systems end to end: data model, APIs, cloud infrastructure and LLM features. In 2026 I built a RAG knowledge base with AI agents, an AI proposal generator and AI sales reporting for a real-estate marketing agency, and led the technical side of a licensed brokerage platform.";
 
 export const lookingFor =
-  "A full-time AI/ML or backend role, remote in Germany or hybrid around Nuremberg, with English as the working language.";
+  "A full-time AI/ML or backend role anywhere in Germany: remote, hybrid or on-site, open to relocation. English as the working language.";
 
 export const stats = [
   { value: "8+", label: "Years in software", note: "Since December 2018" },
@@ -30,9 +30,9 @@ export const stats = [
 ];
 
 export const focus = [
-  "LLM applications: RAG with pgvector and embeddings, AI agents, Claude, OpenAI, Gemini and Mistral APIs",
+  "LLM applications: RAG with pgvector and embeddings, AI agents, MCP, LLM evals, Claude, OpenAI, Gemini and Mistral APIs",
   "Python backends: FastAPI, Django, Celery, SQLAlchemy; also C# / ASP.NET Core and TypeScript",
-  "Cloud and DevOps: AWS, GCP, Hetzner, Vercel, Docker, GitHub Actions",
+  "Cloud and DevOps: AWS, GCP, Hetzner, Vercel, Docker, Kubernetes, GitHub Actions",
   "Automation and integrations: n8n, OAuth 2.0, Google Workspace, Slack, Notion, Canva Connect API",
   "Team lead experience: led a remote developer team at Bookinglane",
 ];
@@ -45,13 +45,15 @@ export const experience = [
     dates: "Apr 2024 – present",
     bullets: [
       "In 2026, built four AI products for a real-estate marketing agency client: a RAG knowledge base with AI agents, an AI proposal generator, AI sales reporting and a property-portal monitoring agent (see Projects).",
+      "Built LLM evals for RAG and AI-agent features to measure and track answer quality.",
+      "Built MCP (Model Context Protocol) integrations that give AI agents access to tools and data.",
       "Integrated OpenAI and Gemini LLM APIs for automated test-case generation and log analysis, cutting bug-triage time.",
       "Built a distributed task-processing system with Celery and RabbitMQ for concurrent test execution and large-scale data processing.",
-      "Architected and ran cloud infrastructure on AWS and GCP: EC2, load balancers, PostgreSQL replication for high availability.",
+      "Architected and ran cloud infrastructure on AWS and GCP: EC2, load balancers, PostgreSQL replication for high availability; deployed services with Docker and Kubernetes.",
       "Built n8n business automations, including social-media auto-posting and invoice-collection pipelines.",
       "Developed UI test suites for React and Vue.js apps and automated Android performance monitoring via ADB.",
     ],
-    tags: ["Python", "LLM APIs", "RAG", "Celery", "RabbitMQ", "AWS", "GCP", "n8n"],
+    tags: ["Python", "LLM APIs", "RAG", "MCP", "LLM evals", "Celery", "RabbitMQ", "AWS", "GCP", "Kubernetes", "n8n"],
   },
   {
     role: "Full-Stack Developer",
@@ -195,11 +197,11 @@ export const languages = [
 ];
 
 export const skills = [
-  { group: "AI / LLM", items: ["RAG (pgvector, embeddings)", "AI agents", "Claude", "OpenAI", "Gemini", "Mistral"] },
+  { group: "AI / LLM", items: ["RAG (pgvector, embeddings)", "AI agents", "MCP (Model Context Protocol)", "LLM evals", "Claude", "OpenAI", "Gemini", "Mistral"] },
   { group: "Machine learning", items: ["PyTorch", "TensorFlow", "scikit-learn", "SVMs and kernel methods"] },
   { group: "Backend", items: ["Python", "FastAPI", "Django", "Celery", "SQLAlchemy", "Pytest", "C# / ASP.NET Core", "TypeScript", "REST APIs", "Microservices"] },
   { group: "Data & messaging", items: ["PostgreSQL", "MySQL", "MongoDB", "RabbitMQ", "Inngest background jobs"] },
-  { group: "Cloud & DevOps", items: ["AWS (EC2, S3, Lambda, load balancers)", "GCP", "Hetzner", "Vercel", "Docker", "Jenkins", "GitHub Actions"] },
+  { group: "Cloud & DevOps", items: ["AWS (EC2, S3, Lambda, load balancers)", "GCP", "Hetzner", "Vercel", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"] },
   { group: "Automation & integrations", items: ["n8n", "OAuth 2.0", "Google Workspace", "Slack", "Notion", "Canva Connect API", "Fathom API", "Stripe", "PayPal"] },
   { group: "Frontend & mobile", items: ["React", "Next.js", "Vue.js", "Swift (iOS)"] },
 ];
